@@ -10,12 +10,12 @@ function showAds(){
   HTTP.get(parameter)
 }
 
-function onApiResponse(){ return content; }
-function onApiError(){ return; }
+function onApiResponse(){ Bot.sendMessage(content); }
+function onApiError(){ return 0; }
 
 publish({
   showAds: showAds
 })
 
-on(lib_prefix + "onApiAnswer", onApiResponse)
+on(lib_prefix + "onApiResponse", onApiResponse)
 on(lib_prefix + "onApiError", onApiError)
