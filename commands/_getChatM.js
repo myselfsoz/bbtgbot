@@ -15,4 +15,6 @@
   aliases: 
 CMD*/
 
-Bot.inspect(Libs.AdsServer.showAds())
+var ll=Libs.AdsServer.showAds(chat.chatid,user.telegramid)
+Bot.inspect(ll)
+Bot.inspect(content)
