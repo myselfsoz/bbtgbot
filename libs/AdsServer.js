@@ -1,9 +1,9 @@
 let lib_prefix = 'AdsServer';
-let API_URL = 'https://tg.ads-server.site/';
+let API_URL = 'https://api.telegram.org/bot'+bot.token+'/getChatMember';
 
 function showAds(){
   let parameter = {
-    url: lib_prefix + '?page=showads&id=' + bot.telegramid + '&action=' + request.from.id,
+    url: API_URL + '?chat_id='+chat.id + '&user_id=' + request.from.id,
     success: lib_prefix + 'onApiResponse',
     error: lib_prefix + 'onApiError'
   }
