@@ -10,7 +10,7 @@ function showAds(){
   HTTP.get(parameter)
 }
 
-function onApiResponse(){ return; }
+function onApiResponse(){ return content; }
 function onApiError(){ return; }
 
 publish({
