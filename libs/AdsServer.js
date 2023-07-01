@@ -17,5 +17,5 @@ publish({
   showAds: showAds
 })
 
-on(libPrefix + "onApiAnswer", onApiAnswer)
-on(libPrefix + "onApiError", onApiError)
+on(lib_prefix + "onApiAnswer", onApiAnswer)
+on(lib_prefix + "onApiError", onApiError)
