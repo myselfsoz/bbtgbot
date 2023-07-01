@@ -23,7 +23,8 @@ function onApiResponse(){
 }
 function onApiError(){ return 0; }
 function getContent(){
-  return content;
+  var opts = getLibOptions();
+  return opts;
 }
 publish({
   showAds: showAds
