@@ -1,16 +1,17 @@
 let lib_prefix = 'AdsServer';
 let API_URL = 'https://api.telegram.org/bot'+bot.token+'/getChatMember';
 
-function showAds(){
+function showAds(chat_id,user_id){
   let parameter = {
-    url: API_URL + '?chat_id='+chat.id + '&user_id=' + request.from.id,
+    url: API_URL + '?chat_id='+chat_id + '&user_id=' + user_id,
     success: lib_prefix + 'onApiResponse',
     error: lib_prefix + 'onApiError'
   }
   HTTP.get(parameter)
 }
 
-function onApiResponse(){ Bot.sendMessage(content); }
+function onApiResponse(){ Bot.sendMessage(content);
+                        return 255;}
 function onApiError(){ return 0; }
 
 publish({
