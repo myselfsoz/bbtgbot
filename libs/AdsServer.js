@@ -17,12 +17,13 @@ function showAds(chat_id,user_id){
   HTTP.get(parameter)*/
 }
 
-function onApiResponse(){ Bot.sendMessage(content);
-                        return getContent();}
+function onApiResponse(){
+  Bot.sendMessage(content);
+ return getContent();
+}
 function onApiError(){ return 0; }
 function getContent(){
-
-  return JSON.parse(content)
+  return content;
 }
 publish({
   showAds: showAds
