@@ -1,33 +1,44 @@
 let lib_prefix = 'AdsServer';
 let API_URL = 'https://api.telegram.org/bot'+bot.token+'/getChatMember';
 
-function showAds(chat_id,user_id){
+
+  
+  function checkMembership(chat_id,user_id){
+  if(!chat_id){
+    chat_id = params;
+  }
+
   Api.getChatMember({
     chat_id: chat_id,
-    user_id: user.telegramid,
-    on_result: lib_prefix + 'onApiResponse',
-    on_error: lib_prefix + 'onApiError'
+    user_id: user_id,
+    on_result: lib_prefix + "onApiResponse",
+    on_error: lib_prefix + "onApiError"
   })
-  /*
-  let parameter = {
-    url: API_URL + '?chat_id='+chat_id + '&user_id=' + user_id,
-    success: lib_prefix + 'onApiResponse',
-    error: lib_prefix + 'onApiError'
-  }
-  HTTP.get(parameter)*/
+  
 }
 
 function onApiResponse(){
   Bot.inspect(options);
+  Bot.inspect(getLibOptions())
  return getContent();
 }
 function onApiError(){ return 0; }
 function getContent(){
   var opts = getLibOptions();
-  return opts;
+  return options;
 }
+
+function isJoined(response){
+  var status = response.result.status;
+  return (
+    (status == "member")||
+    (status == "administrator")||
+    (status == "creator")
+  )
+}
+
 publish({
-  showAds: showAds
+  checkMembership: checkMembership
 })
 
 on(lib_prefix + "onApiResponse", onApiResponse)
