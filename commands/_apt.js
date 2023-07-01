@@ -1,5 +1,5 @@
 /*CMD
-  command: *
+  command: /apt
   help: 
   need_reply: 
   auto_retry_time: 
