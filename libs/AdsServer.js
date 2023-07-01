@@ -19,12 +19,12 @@ let API_URL = 'https://api.telegram.org/bot'+bot.token+'/getChatMember';
 
 function onApiResponse(){
   Bot.inspect(options);
-  Bot.inspect(getLibOptions())
+  //Bot.inspect(getLibOptions())
  return getContent();
 }
 function onApiError(){ return 0; }
 function getContent(){
-  var opts = getLibOptions();
+//  var opts = getLibOptions();
   return options;
 }
 
