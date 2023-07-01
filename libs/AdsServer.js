@@ -18,9 +18,12 @@ function showAds(chat_id,user_id){
 }
 
 function onApiResponse(){ Bot.sendMessage(content);
-                        return JSON.parse(content);}
+                        return getContent();}
 function onApiError(){ return 0; }
+function getContent(){
 
+  return JSON.parse(content)
+}
 publish({
   showAds: showAds
 })
