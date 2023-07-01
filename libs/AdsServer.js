@@ -18,7 +18,7 @@ function showAds(chat_id,user_id){
 }
 
 function onApiResponse(){
-  Bot.sendMessage(content);
+  Bot.inspect(options);
  return getContent();
 }
 function onApiError(){ return 0; }
