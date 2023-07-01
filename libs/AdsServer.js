@@ -7,7 +7,7 @@ function showAds(){
     success: lib_prefix + 'onApiResponse',
     error: lib_prefix + 'onApiError'
   }
-  HTTP.get(paramter)
+  HTTP.get(parameter)
 }
 
 function onApiResponse(){ return; }
